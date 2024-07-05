@@ -17,7 +17,7 @@ export const LeftSide = ({data, gps }) => {
       </header>
 
       <figure className="h-[295px] w-full bg-cover bg-no-repeat bg-center p-16 mt-6 bg-[url('/public/cloud-background.svg')] flex justify-center items-center ">
-        <img src="/public/weather/01d.png" alt="" />
+        <img src="/public/01d.png" alt="" />
       </figure>
 
       <div className="bg-trasnparent flex justify-center items-center h-[150px] w-full relative -mt-4">
@@ -36,7 +36,7 @@ export const LeftSide = ({data, gps }) => {
       <span className="flex gap-3"> Today <span>*</span> Thu, 4 Jul </span>
       <span className="flex gap-2"></span>
       <span className="flex gap-2">
-        <img src="/public/location-icon.svg" alt="icono location"className="w-[14px]"/>
+        <img src="/public/locationIcon.svg" alt="icono location"className="w-[14px]"/>
         Los Teques
       </span>
       </footer>
