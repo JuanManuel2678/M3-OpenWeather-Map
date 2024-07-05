@@ -11,12 +11,12 @@ export const LeftSide = ({data, gps }) => {
             <button class="bg-[#6E707A] text-[16px] w-[161px] h-[40px] hover:bg-[#E7E7EB] hover:text-[#555555] transition duration-300 active:bg-[#b5b5bb] focus:outline-none ml-[64px] mt-[53px]">Search for places</button>
 
           <figure className="h-[40px] w-[40px] bg-[#6E707A] rounded-full flex justify-center items-center cursor-pointer hover:bg-[#E7E7EB] hover:text-[#555555] active:bg-[#b5b5bb] transition duration-300 p-[9px] mr-[54px] mt-[53px]" onClick={gps}>
-             <img src="/image/center.svg" alt="icono centrar" />
+             <img src="/public/center.svg" alt="icono centrar" />
           </figure>
             
       </header>
 
-      <figure className="h-[295px] w-full bg-cover bg-no-repeat bg-center p-16 mt-6 bg-[url('/public/image/cloud-background.svg')] flex justify-center items-center ">
+      <figure className="h-[295px] w-full bg-cover bg-no-repeat bg-center p-16 mt-6 bg-[url('/public/cloud-background.svg')] flex justify-center items-center ">
         <img src="/public/weather/01d.png" alt="" />
       </figure>
 
@@ -36,7 +36,7 @@ export const LeftSide = ({data, gps }) => {
       <span className="flex gap-3"> Today <span>*</span> Thu, 4 Jul </span>
       <span className="flex gap-2"></span>
       <span className="flex gap-2">
-        <img src="/public/image/location-icon.svg" alt="icono location"className="w-[14px]"/>
+        <img src="/public/location-icon.svg" alt="icono location"className="w-[14px]"/>
         Los Teques
       </span>
       </footer>
