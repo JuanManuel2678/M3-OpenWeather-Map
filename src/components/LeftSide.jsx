@@ -1,4 +1,5 @@
 import center from '/public/center.svg'
+import location from '/public/location.svg'
 
 export const LeftSide = ({data, gps }) => {
   console.log(data)
@@ -36,7 +37,7 @@ export const LeftSide = ({data, gps }) => {
       <span className="flex gap-3"> Today <span>*</span> Thu, 4 Jul </span>
       <span className="flex gap-2"></span>
       <span className="flex gap-2">
-        <img src="/public/locationIcon.svg" alt="icono location"className="w-[14px]"/>
+        <img src={location} alt="icono location"className="w-[14px]"/>
         Los Teques
       </span>
       </footer>
