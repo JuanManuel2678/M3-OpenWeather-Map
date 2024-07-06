@@ -1,7 +1,7 @@
 import center from '/public/center.svg'
 import location from '/public/location.svg'
 
-export const LeftSide = ({data, gps }) => {
+export const LeftSide = ({data, gps, setModal }) => {
   console.log(data)
   return (
    
@@ -9,7 +9,7 @@ export const LeftSide = ({data, gps }) => {
       
       <header className="flex justify-between h-[100px]">
 
-            <button class="bg-[#6E707A] text-[16px] w-[161px] h-[40px] hover:bg-[#E7E7EB] hover:text-[#555555] transition duration-300 active:bg-[#b5b5bb] focus:outline-none ml-[64px] mt-[53px]">Search for places</button>
+            <button class="bg-[#6E707A] text-[16px] w-[161px] h-[40px] hover:bg-[#E7E7EB] hover:text-[#555555] transition duration-300 active:bg-[#b5b5bb] focus:outline-none ml-[64px] mt-[53px]" onClick={() => setModal(true)}>Search for places</button>
 
           <figure className="h-[40px] w-[40px] bg-[#6E707A] rounded-full flex justify-center items-center cursor-pointer hover:bg-[#E7E7EB] hover:text-[#555555] active:bg-[#b5b5bb] transition duration-300 p-[9px] mr-[54px] mt-[53px]" onClick={gps}>
              <img src={center} alt="icono centrar" />

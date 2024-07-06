@@ -3,12 +3,12 @@ export const Main = ({ data }) => {
     console.log(data)
 
   return (
-    <section className="text-center text-white font-bold flex flex-col flex-wrap justify-between items-center p-8 bg-[#100E1D] h-screen w-[calc(140vh - 459px)] mx-auto">
+    <section className="text-center text-white font-bold flex flex-col flex-wrap justify-between items-center p-8 bg-[#100E1D] h-screen  mx-auto">
         
-            <div className="w-full h-fit flex justify-end gap-3 custom-md:justify-center ">
+            <div className="w-full flex justify-end gap-3 custom-md:justify-center ">
                <div className="text-[#100E1D] bg-[#E7E7EB] font-bold font-sans text-lg h-10 w-10 flex justify-center items-center cursor-pointer rounded-full pr-1 hover:bg-[#EE7E7EB] hover:text-[#555555] active:bg-[#B5B5BB] transition duration-300">°C</div>
                <div className="text-[#100E1D] bg-[#E7E7EB] font-bold font-sans text-lg h-10 w-10 flex justify-center items-center cursor-pointer rounded-full pr-1 hover:bg-[#EE7E7EB] hover:text-[#555555] active:bg-[#B5B5BB] transition duration-300">°F</div>
-               <div className="text-[#100E1D] bg-[#E7E7EB] font-bold font-sans text-lg h-10 w-10 flex justify-center items-center cursor-pointer rounded-full pr-1 hover:bg-[#EE7E7EB] hover:text-[#555555] active:bg-[#B5B5BB] transition duration-300">°k</div>
+
             </div>
 
             <article className="flex flex-wrap justify-center items-center gap-4 text-center">
