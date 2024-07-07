@@ -1,15 +1,16 @@
 import center from '/public/center.svg'
 import location from '/public/location.svg'
 
-export const LeftSide = ({data, gps, setModal }) => {
+export const LeftSide = ({data, gps, setShowModal }) => {
   console.log(data)
+
   return (
    
     <aside className="w-[459px] max-h-[1050px] min-h-[800px] h-screen bg-[#1E213A] text-white font-raleway flex flex-col justify-between">
       
       <header className="flex justify-between h-[100px]">
 
-            <button class="bg-[#6E707A] text-[16px] w-[161px] h-[40px] hover:bg-[#E7E7EB] hover:text-[#555555] transition duration-300 active:bg-[#b5b5bb] focus:outline-none ml-[64px] mt-[53px]" onClick={() => setModal(true)}>Search for places</button>
+            <button class="bg-[#6E707A] text-[16px] w-[161px] h-[40px] hover:bg-[#E7E7EB] hover:text-[#555555] transition duration-300 active:bg-[#b5b5bb] focus:outline-none ml-[64px] mt-[53px]" onClick={() => setShowModal(true)}>Search for places</button>
 
           <figure className="h-[40px] w-[40px] bg-[#6E707A] rounded-full flex justify-center items-center cursor-pointer hover:bg-[#E7E7EB] hover:text-[#555555] active:bg-[#b5b5bb] transition duration-300 p-[9px] mr-[54px] mt-[53px]" onClick={gps}>
              <img src={center} alt="icono centrar" />
@@ -54,4 +55,3 @@ export default LeftSide
 {/* <button className="borde-2 border-black bg-[#6e707A]  ml-[46px] mt-[42px] text-[16px] px-2 py-1 text-[#E7E7EB]">Search for places </button> */}
 
 {/* <div "h-[40px] w-[40px] bg-[#6E707A] rounded-full flex justify-center items-center cursor-pointer hover:bg-[#E7E7EB] hover:text-[#555555] active:bg-[#b5b5bb] transition duration-300 p-[9px]"> */}
-

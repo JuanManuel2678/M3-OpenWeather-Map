@@ -1,12 +1,13 @@
 import lupa from "/public/lupa.svg"
 
-export const Modal = () => {
+export const Modal = ({setShowModal}) => {
 
   return (
-    <div className="w-[459px] h-full max-h-[1050px] min-h-[800px] absolute bg-[#1E213A] text-white font-raleway p-11 gap-6 hidden ">
+    <div className="w-[459px] h-full max-h-[1050px] min-h-[800px] absolute bg-[#1E213A] text-white font-raleway p-11 gap-6 border-2 border-black">
 
       <div className='w-full flex justify-end '>
-        <button className=" hover:bg-[#E7E7EB] hover:text-[#555555] active:bg-[#B5B5BB] transition duration-300 rounded-full">
+
+        <button className=" hover:bg-[#E7E7EB] hover:text-[#555555] active:bg-[#B5B5BB] transition duration-300 rounded-full" onClick={() => setShowModal(false)}>
           <svg xmlns="http://www.w3.org/2000/svg" fill="#E7E7EB" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
             <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
           </svg>

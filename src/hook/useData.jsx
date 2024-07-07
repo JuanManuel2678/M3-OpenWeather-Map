@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react"
 
 export const useData = () => {
+  const [showModal, setShowModal ] = useState(false)
     const [data, setData] = useState([])
-    const [modal, setModal ] = useState(false)
+    
 
 
     function gps () {
@@ -39,7 +40,7 @@ export const useData = () => {
     getData()
    }, []) 
 
-   return { data, gps, modal, setModal }
+   return { data, gps, showModal, setShowModal}
 }
 
 
