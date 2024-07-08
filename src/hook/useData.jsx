@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react"
 
 export const useData = () => {
-  const [showModal, setShowModal ] = useState(false)
-    const [data, setData] = useState([])
-    
-
-
+    const [showModal, setShowModal ] = useState(false)
+    const [data, setData] = useState({})
+    const [search, setSearch] = useState("")
+   
     function gps () {
 
         function success(position) {
@@ -25,22 +24,36 @@ export const useData = () => {
           const watchID = navigator.geolocation.watchPosition(success, error, options);
     }
 
-
     async function getData () {
-        const rs = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=ae7f99ab707258411fafd5ac03530e3b`)
+        const rs = await fetch(` https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=ae7f99ab707258411fafd5ac03530e3b`)
         const rsJson = await rs.json()
 
-        
-
-       setData(rsJson)
+      
+        setData(rsJson)
         console.log(rsJson)
+    }
+
+    const searchPressed = async () => {
+     const rs = await fetch(` https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=ae7f99ab707258411fafd5ac03530e3b`)
+        const rsJson = await rs.json()
+      setData(rsJson)
+      setShowModal(false)
     }
 
    useEffect(() => {
     getData()
    }, []) 
 
-   return { data, gps, showModal, setShowModal}
+   return { 
+    data,
+    setData,
+    gps,
+    showModal,
+    setShowModal,
+    search,
+    setSearch,
+    searchPressed,
+  }
 }
 
 

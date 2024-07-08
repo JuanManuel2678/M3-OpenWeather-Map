@@ -1,6 +1,6 @@
 
 export const Main = ({ data }) => {
-  console.log(data)
+console.log(data)
 
 return (
   <section className="text-center text-white font-bold flex flex-col flex-wrap justify-between items-center p-8 bg-[#100E1D] h-screen  mx-auto">

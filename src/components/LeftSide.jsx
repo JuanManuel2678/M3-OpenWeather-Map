@@ -2,7 +2,7 @@ import center from '/public/center.svg'
 import location from '/public/location.svg'
 
 export const LeftSide = ({data, gps, setShowModal }) => {
-  console.log(data)
+console.log(data)
 
   return (
    
@@ -19,19 +19,21 @@ export const LeftSide = ({data, gps, setShowModal }) => {
       </header>
 
       <figure className="h-[295px] w-full bg-cover bg-no-repeat bg-center p-16 mt-6 bg-[url('/public/cloud-background.svg')] flex justify-center items-center ">
-        <img src="/public/01d.png" alt="" />
+        <img src={`/public/${data.weather[0].icon}.png`} alt="icon weather" />
       </figure>
 
       <div className="bg-trasnparent flex justify-center items-center h-[150px] w-full relative -mt-4">
-          <h2 className="text-[9rem] font-[500] text-white">18</h2>
+          <h2 className="text-[5rem] font-[500] text-white">{data.main.temp}</h2>
           <span className="text-[#88869D] text-5xl font-normal font-sans">
             °C
           </span>
       </div>
 
       <div className="flex flex-col justify-center items-center ">
-        <h2 className="text-4xl font-semibold text-[#88869D] pt-6">Clouds</h2>
-        <h4 className="text-base font-semibold text-[#88869D]">Overcast Clouds</h4>
+        <h2 className="text-4xl font-semibold text-[#88869D] pt-6">
+          {data.weather[0].main}
+        </h2>
+        <h4 className="text-base font-semibold text-[#88869D]">{data.weather[0].description}</h4>
       </div>
 
       <footer className="w-full flex flex-col gap-1 justify-center items-center text-[#88869D] pt-6 mb-6">
@@ -39,7 +41,7 @@ export const LeftSide = ({data, gps, setShowModal }) => {
       <span className="flex gap-2"></span>
       <span className="flex gap-2">
         <img src={location} alt="icono location"className="w-[14px]"/>
-        Los Teques
+       {data.name}
       </span>
       </footer>
       
@@ -49,9 +51,3 @@ export const LeftSide = ({data, gps, setShowModal }) => {
 }
 
 export default LeftSide
-
-// 
-
-{/* <button className="borde-2 border-black bg-[#6e707A]  ml-[46px] mt-[42px] text-[16px] px-2 py-1 text-[#E7E7EB]">Search for places </button> */}
-
-{/* <div "h-[40px] w-[40px] bg-[#6E707A] rounded-full flex justify-center items-center cursor-pointer hover:bg-[#E7E7EB] hover:text-[#555555] active:bg-[#b5b5bb] transition duration-300 p-[9px]"> */}
