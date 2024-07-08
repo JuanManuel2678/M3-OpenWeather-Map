@@ -5,11 +5,13 @@ export const useData = () => {
     const [data, setData] = useState({})
     const [search, setSearch] = useState("")
    
-    function gps () {
+    async function gps () {
 
-        function success(position) {
+       function success(position) {
             console.log((position.coords.latitude).toFixed(2),( position.coords.longitude).toFixed(2));
           }
+          const rs = await fetch(` https://api.openweathermap.org/data/2.5/weather?lat=${(position.coords.latitude).toFixed(2)}&lon=${(position.coords.longitude).toFixed(2)}&appid=ae7f99ab707258411fafd5ac03530e3b`)
+          const rsJson = await rs.json()
           
           function error() { 
             alert("Sorry, no position available.");
@@ -22,6 +24,7 @@ export const useData = () => {
           };
           
           const watchID = navigator.geolocation.watchPosition(success, error, options);
+          setData(rsJson)
     }
 
     async function getData () {

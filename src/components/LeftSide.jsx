@@ -25,7 +25,7 @@ console.log(data)
       <div className="bg-trasnparent flex justify-center items-center h-[150px] w-full relative -mt-4">
           <h2 className="text-[5rem] font-[500] text-white">{data.main.temp}</h2>
           <span className="text-[#88869D] text-5xl font-normal font-sans">
-            °C
+            °F
           </span>
       </div>
 
