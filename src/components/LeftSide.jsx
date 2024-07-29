@@ -1,12 +1,22 @@
-import center from '/public/center.svg'
-import location from '/public/location.svg'
+import center from '/center.svg'
+import location from '/location.svg'
 
 export const LeftSide = ({data, gps, setShowModal }) => {
 console.log(data)
 
+const todayDate = {
+  weekday: 'short',
+  day: 'numeric',
+  month: 'short'
+}
+
+// const numberData = data.dt
+const fecha = new Date(data.dt * 1000)
+
+
   return (
    
-    <aside className="w-[459px] max-h-[1050px] min-h-[800px] h-screen bg-[#1E213A] text-white font-raleway flex flex-col justify-between">
+    <aside className="w-[459px]  bg-[#1E213A] text-white font-raleway flex flex-col justify-between">
       
       <header className="flex justify-between h-[100px]">
 
@@ -18,12 +28,12 @@ console.log(data)
             
       </header>
 
-      <figure className="h-[295px] w-full bg-cover bg-no-repeat bg-center p-16 mt-6 bg-[url('/public/cloud-background.svg')] flex justify-center items-center ">
-        <img src={`/public/${data.weather[0].icon}.png`} alt="icon weather" />
+      <figure className="h-[295px] w-full bg-cover bg-no-repeat bg-center p-16 mt-6 bg-[url('/cloud-background.svg')] flex justify-center items-center ">
+         <img src={`/${data?.weather && data?.weather[0]?.icon}.png`} alt="icon weather" />
       </figure>
 
       <div className="bg-trasnparent flex justify-center items-center h-[150px] w-full relative -mt-4">
-          <h2 className="text-[5rem] font-[500] text-white">{data.main.temp}</h2>
+          <h2 className="text-[5rem] font-[500] text-white">{Math.trunc(data.main.temp)}</h2> 
           <span className="text-[#88869D] text-5xl font-normal font-sans">
             °F
           </span>
@@ -37,8 +47,7 @@ console.log(data)
       </div>
 
       <footer className="w-full flex flex-col gap-1 justify-center items-center text-[#88869D] pt-6 mb-6">
-      <span className="flex gap-3"> Today <span>*</span> Thu, 4 Jul </span>
-      <span className="flex gap-2"></span>
+      <span className="flex gap-3"> Today <span>*</span>{fecha.toLocaleDateString('en-GB', todayDate )}</span>
       <span className="flex gap-2">
         <img src={location} alt="icono location"className="w-[14px]"/>
        {data.name}

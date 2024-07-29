@@ -1,11 +1,11 @@
-import lupa from "/public/lupa.svg"
+import lupa from "/lupa.svg"
 
 export const Modal = ({setShowModal, setSearch, searchPressed}) => {
 
 
 
   return (
-    <div className="w-[459px] h-full max-h-[1050px] min-h-[800px] absolute bg-[#1E213A] text-white font-raleway p-11 gap-6 border-2 border-black">
+    <div className="w-[459px] h-screen absolute bg-[#1E213A] text-white font-raleway p-11 gap-6 border-2 border-black">
 
       <div className='w-full flex justify-end '>
 
@@ -34,17 +34,17 @@ export const Modal = ({setShowModal, setSearch, searchPressed}) => {
 
         <div className="group text-white border border-transparent my-2 cursor-pointer p-2 hover:border-[1px] hover:border-white flex justify-between transition-all duration-300" >
           <p>London</p>
-          <img src="/public/vector.svg" alt="vector" className="w-5 h-5 relative bg-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <img src="/vector.svg" alt="vector" className="w-5 h-5 relative bg-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
 
         <div className="group text-white border border-transparent my-2 cursor-pointer p-2 hover:border-[1px] hover:border-white flex justify-between transition-all duration-300" >
           <p>Barcelona</p>
-          <img src="/public/vector.svg" alt="vector" className="w-5 h-5 relative bg-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <img src="/vector.svg" alt="vector" className="w-5 h-5 relative bg-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
 
         <div className="group text-white border border-transparent my-2 cursor-pointer p-2 hover:border-[1px] hover:border-white flex justify-between transition-all duration-300"  >
           <p>Long Beach</p>
-          <img src="/public/vector.svg" alt="vector" className="w-5 h-5 relative bg-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+          <img src="/vector.svg" alt="vector" className="w-5 h-5 relative bg-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
 
       </div>
