@@ -2,8 +2,7 @@ import lupa from "/lupa.svg"
 
 export const Modal = ({setShowModal, setSearch, searchPressed}) => {
 
-
-
+  
   return (
     <div className="w-[459px] h-screen absolute bg-[#1E213A] text-white font-raleway p-11 gap-6 border-2 border-black">
 
@@ -24,10 +23,12 @@ export const Modal = ({setShowModal, setSearch, searchPressed}) => {
           type="text" 
           placeholder="Search location"
           onChange={(e) => setSearch(e.target.value)}
-          className="bg-[#1E213A] focus:outline-none focus:border-[#E7E7EB] transition duration-300 " />
+          className="bg-[#1E213A] focus:outline-none focus:border-[#E7E7EB] transition duration-300" />
         </div>
 
-        <button onClick={searchPressed} className=" w-[86px] h-[48px] bg-[#3C47E9] font-semibold text-base hover:bg-[#E7E7EB] hover:text-[#555555] active:bg-[#B5B5BB] transition duration-300-">Search</button>
+        <button 
+        onClick={searchPressed} 
+        className=" w-[86px] h-[48px] bg-[#3C47E9] font-semibold text-base hover:bg-[#E7E7EB] hover:text-[#555555] active:bg-[#B5B5BB] transition duration-300-">Search</button>
       </header>
 
       <div className="flex flex-col gap-4 mt-6">
