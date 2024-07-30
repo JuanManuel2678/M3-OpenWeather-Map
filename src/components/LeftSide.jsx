@@ -32,7 +32,7 @@ const fecha = new Date(data.dt * 1000)
       </figure>
 
       <div className="bg-trasnparent flex justify-center items-center h-[150px] w-full relative -mt-4">
-          <h2 className="text-[5rem] font-[500] text-white">{Math.trunc(data.main.temp)}</h2> 
+          <h2 className="text-[5rem] font-[500] text-white">{Math.trunc(data?.main && data?.main?.temp)}</h2> 
           <span className="text-[#88869D] text-5xl font-normal font-sans">
             °C
           </span>
@@ -40,9 +40,9 @@ const fecha = new Date(data.dt * 1000)
 
       <div className="flex flex-col justify-center items-center ">
         <h2 className="text-4xl font-semibold text-[#88869D] pt-6">
-          {data.weather[0].main}
+          {data?.weather && data?.weather[0]?.main}
         </h2>
-        <h4 className="text-base font-semibold text-[#88869D]">{data.weather[0].description}</h4>
+        <h4 className="text-base font-semibold text-[#88869D]">{data?.weather && data?.weather[0]?.description}</h4>
       </div>
 
       <footer className="w-full flex flex-col gap-1 justify-center items-center text-[#88869D] pt-6 mb-6">
