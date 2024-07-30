@@ -33,17 +33,23 @@ export const Modal = ({setShowModal, setSearch, searchPressed}) => {
 
       <div className="flex flex-col gap-4 mt-6">
 
-        <div className="group text-white border border-transparent my-2 cursor-pointer p-2 hover:border-[1px] hover:border-white flex justify-between transition-all duration-300" >
+        <div 
+        className="group text-white border border-transparent my-2 cursor-pointer p-2 hover:border-[1px] hover:border-white flex justify-between transition-all duration-300"
+        onClick={() => searchPressed('London')} >
           <p>London</p>
           <img src="/vector.svg" alt="vector" className="w-5 h-5 relative bg-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
 
-        <div className="group text-white border border-transparent my-2 cursor-pointer p-2 hover:border-[1px] hover:border-white flex justify-between transition-all duration-300" >
+        <div 
+        className="group text-white border border-transparent my-2 cursor-pointer p-2 hover:border-[1px] hover:border-white flex justify-between transition-all duration-300" 
+        onClick={() => searchPressed('barcelona')}>
           <p>Barcelona</p>
           <img src="/vector.svg" alt="vector" className="w-5 h-5 relative bg-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
 
-        <div className="group text-white border border-transparent my-2 cursor-pointer p-2 hover:border-[1px] hover:border-white flex justify-between transition-all duration-300"  >
+        <div 
+        className="group text-white border border-transparent my-2 cursor-pointer p-2 hover:border-[1px] hover:border-white flex justify-between transition-all duration-300"  
+        onClick={() => searchPressed('long beach')}>
           <p>Long Beach</p>
           <img src="/vector.svg" alt="vector" className="w-5 h-5 relative bg-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>

@@ -1,8 +1,7 @@
 import center from '/center.svg'
 import location from '/location.svg'
 
-export const LeftSide = ({data, gps, setShowModal }) => {
-console.log(data)
+export const LeftSide = ({data, GPS, setShowModal }) => {
 
 const todayDate = {
   weekday: 'short',
@@ -20,11 +19,11 @@ const fecha = new Date(data.dt * 1000)
       
       <header className="flex justify-between h-[100px]">
 
-            <button class="bg-[#6E707A] text-[16px] w-[161px] h-[40px] hover:bg-[#E7E7EB] hover:text-[#555555] transition duration-300 active:bg-[#b5b5bb] focus:outline-none ml-[64px] mt-[53px]" onClick={() => setShowModal(true)}>Search for places</button>
+       <button class="bg-[#6E707A] text-[16px] w-[161px] h-[40px] hover:bg-[#E7E7EB] hover:text-[#555555] transition duration-300 active:bg-[#b5b5bb] focus:outline-none ml-[64px] mt-[53px]" onClick={() => setShowModal(true)}>Search for places</button>
 
-          <figure className="h-[40px] w-[40px] bg-[#6E707A] rounded-full flex justify-center items-center cursor-pointer hover:bg-[#E7E7EB] hover:text-[#555555] active:bg-[#b5b5bb] transition duration-300 p-[9px] mr-[54px] mt-[53px]" onClick={gps}>
-             <img src={center} alt="icono centrar" />
-          </figure>
+       <figure className="h-[40px] w-[40px] bg-[#6E707A] rounded-full flex justify-center items-center cursor-pointer hover:bg-[#E7E7EB] hover:text-[#555555] active:bg-[#b5b5bb] transition duration-300 p-[9px] mr-[54px] mt-[53px]" onClick={GPS}>
+           <img src={center} alt="icono centrar" />
+       </figure>
             
       </header>
 
@@ -33,7 +32,7 @@ const fecha = new Date(data.dt * 1000)
       </figure>
 
       <div className="bg-trasnparent flex justify-center items-center h-[150px] w-full relative -mt-4">
-          {/* <h2 className="text-[5rem] font-[500] text-white">{Math.trunc(data.main.temp)}</h2>  */}
+          <h2 className="text-[5rem] font-[500] text-white">{Math.trunc(data.main.temp)}</h2> 
           <span className="text-[#88869D] text-5xl font-normal font-sans">
             °C
           </span>
@@ -41,9 +40,9 @@ const fecha = new Date(data.dt * 1000)
 
       <div className="flex flex-col justify-center items-center ">
         <h2 className="text-4xl font-semibold text-[#88869D] pt-6">
-          {/* {data.weather[0].main} */}
+          {data.weather[0].main}
         </h2>
-        {/* <h4 className="text-base font-semibold text-[#88869D]">{data.weather[0].description}</h4> */}
+        <h4 className="text-base font-semibold text-[#88869D]">{data.weather[0].description}</h4>
       </div>
 
       <footer className="w-full flex flex-col gap-1 justify-center items-center text-[#88869D] pt-6 mb-6">

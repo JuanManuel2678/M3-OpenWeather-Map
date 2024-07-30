@@ -4,45 +4,39 @@ export const useData = () => {
     const [showModal, setShowModal ] = useState(false)
     const [data, setData] = useState({})
     const [search, setSearch] = useState("")
-   
-    async function gps () {
 
-       function success(position) {
-            console.log((position.coords.latitude).toFixed(2),( position.coords.longitude).toFixed(2));
-          }
-          const rs = await fetch(` https://api.openweathermap.org/data/2.5/weather?lat=${(position.coords.latitude).toFixed(2)}&lon=${(position.coords.longitude).toFixed(2)}&appid=ae7f99ab707258411fafd5ac03530e3b`)
-          const rsJson = await rs.json()
-          
-          function error() { 
-            alert("Sorry, no position available.");
-          }
-          
-          const options = {
-            enableHighAccuracy: true,
-            maximumAge: 30000,
-            timeout: 27000,
-          };
-          
-          const watchID = navigator.geolocation.watchPosition(success, error, options);
-          setData(rsJson)
-    }
+    const BASE_Link = 'https://api.openweathermap.org/data/2.5/weather?'
+    const API_KEY = 'ae7f99ab707258411fafd5ac03530e3b'
+    
 
     async function getData () {
-        const rs = await fetch(` https://api.openweathermap.org/data/2.5/weather?lat=44.34&lon=10.99&appid=ae7f99ab707258411fafd5ac03530e3b&units=metric`)
+        const rs = await fetch(`${BASE_Link}lat=44.34&lon=10.99&appid=${API_KEY}&units=metric`)
         const rsJson = await rs.json()
 
-      
         setData(rsJson)
-        console.log(rsJson)
     }
 
-    const searchPressed = async () => {
-     const rs = await fetch(` https://api.openweathermap.org/data/2.5/weather?q=${search}&appid=ae7f99ab707258411fafd5ac03530e3b`)
+    async function  searchPressed () {
+        const rs = await fetch(`${BASE_Link}q=${search}&appid=${API_KEY}&units=metric`)
         const rsJson = await rs.json()
+
       setData(rsJson)
       setShowModal(false)
       console.log(rsJson)
     }
+
+    // latitud 44.34 longitud 10.99  https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en
+    const GPS = () => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition((position) => {
+          const { latitude, longitude } = position.coords;
+          console.log(latitude, longitude)
+          fetch(`${BASE_Link}lat=${(latitude).toFixed(2)}&lon=${(longitude).toFixed(2)}&appid=${API_KEY}&units=metric`)
+            .then(response => response.json())
+            .then(data => setData(data));
+        });
+      }
+    };
 
    useEffect(() => {
     getData()
@@ -51,12 +45,12 @@ export const useData = () => {
    return { 
     data,
     setData,
-    gps,
     showModal,
     setShowModal,
     search,
     setSearch,
     searchPressed,
+    GPS,
   }
 }
 
