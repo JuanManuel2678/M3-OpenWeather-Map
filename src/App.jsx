@@ -2,7 +2,7 @@ import { Footer } from "./components/Footer";
 import { LeftSide } from "./components/LeftSide";
 import { Main } from "./components/Main";
 import { Modal } from "./components/Modal";
-import WeatherDay from "./components/WeatherDay";
+import { WeatherDay } from "./components/WeatherDay";
 import { useData } from "./hook/useData";
 
 
