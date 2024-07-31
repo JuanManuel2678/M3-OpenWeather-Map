@@ -6,7 +6,7 @@ export const Main = ({ data }) => {
 
   return (
    
-    <section className=" text-white font-bold flex flex-col flex-wrap justify-between items-center p-8 bg-[#100E1D] mx-auto w-[459px] md:w-[900px]">
+    <section className=" text-white font-bold flex flex-col flex-wrap justify-between items-center p-8 bg-[#100E1D] mx-auto w-screen md:w-[880px]">
 
       <div className="w-full hidden md:flex justify-end gap-3 custom-md:justify-center ">
 
