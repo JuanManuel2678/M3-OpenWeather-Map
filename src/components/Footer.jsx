@@ -1,6 +1,6 @@
 export const Footer = () => {
   return (
-    <footer className="flex justify-center items-center w-full text-[#88869D] font-[500] box-border">
+    <footer className="flex justify-center items-center w-full text-[#88869D] font-[500] box-border pt-5">
       <span>
         Create By{" "}
         <a

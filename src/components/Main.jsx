@@ -1,26 +1,35 @@
+import { Footer } from "./Footer";
+import { WeatherDay } from "./WeatherDay";
+import { WeatherInfo } from "./WeatherInfo";
 
 export const Main = ({ data }) => {
-console.log(data)
 
-return (
-  <section >
-      
-          <article className="flex flex-col flex-wrap gap-7 pb-5"> 
-             
-           <div className="grid grid-cols-2 gap-7 justify-center">
-            
-              <div className="border-2 border-black bg-[#1E213A] p-4 w-[328px] h-[204px] flex flex-col items-center justify-between py-5 pb-8 custom-sm:w-[100%]">Wind status
-               <div>
-               </div>
-              </div>
-              <div className="border-2 border-black bg-[#1E213A] p-4 w-[328px] h-[204px] flex flex-col items-center justify-between py-5 pb-8 custom-sm:w-[100%]">Humidity</div>
-              <div className="border-2 border-black bg-[#1E213A] p-4 w-[328px] h-[158px] flex flex-col items-center justify-between py-5 pb-8 custom-sm:w-[100%]">Visibility</div>
-              <div className="border-2 border-black bg-[#1E213A] p-4 w-[328px] h-[158px] flex flex-col items-center justify-between py-5 pb-8 custom-sm:w-[100%]">Air Pressure</div>
+  return (
+   
+    <section className=" text-white font-bold flex flex-col flex-wrap justify-between items-center p-8 bg-[#100E1D] mx-auto w-[459px] md:w-[900px]">
 
-           </div>
-         </article>
+      <div className="w-full hidden md:flex justify-end gap-3 custom-md:justify-center ">
 
+        <div className="text-[#100E1D] bg-[#E7E7EB] font-bold font-sans text-lg h-10 w-10 flex justify-center items-center cursor-pointer rounded-full pr-1 hover:bg-[#EE7E7EB] hover:text-[#555555] active:bg-[#B5B5BB] transition duration-300">
+          °C
+        </div>
 
-  </section>
-)
-}
+        <div className="text-[#100E1D] bg-[#E7E7EB] font-bold font-sans text-lg h-10 w-10 flex justify-center items-center cursor-pointer rounded-full pr-1 hover:bg-[#EE7E7EB] hover:text-[#555555] active:bg-[#B5B5BB] transition duration-300">
+          °F
+        </div>
+
+      </div>
+
+      <WeatherDay />
+
+      <h4 className="text-left w-full font-bold text-[24px] pl-10 md:pl-20  pt-10 ">
+        Today's Hightlights
+      </h4>
+
+      <WeatherInfo data={data} />
+
+      <Footer />
+
+    </section>
+  );
+};

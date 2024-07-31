@@ -4,7 +4,8 @@ export const Modal = ({setShowModal, setSearch, searchPressed}) => {
 
   
   return (
-    <div className="w-[459px] h-screen absolute bg-[#1E213A] text-white font-raleway p-11 gap-6 border-2 border-black">
+
+    <div className="w-[459px] h-screen absolute bg-[#1E213A] text-white font-raleway flex flex-col p-11 gap-6 border-2 border-black">
 
       <div className='w-full flex justify-end '>
 
@@ -15,7 +16,7 @@ export const Modal = ({setShowModal, setSearch, searchPressed}) => {
         </button>
       </div>
 
-      <header className="flex gap-2 w-[366px] h-[48px] mt-10">
+      <header className="flex gap-2 w-[366px] h-[48px] mt-10 ">
 
         <div className=" flex gap-2 p-2 w-[268px] h-[48px] border-2 border-[grey]">
           <img src={lupa} alt="icon lupa" className="w-[24px] h-[24px] top-1/2" />

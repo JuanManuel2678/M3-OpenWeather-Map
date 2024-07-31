@@ -15,7 +15,7 @@ const fecha = new Date(data.dt * 1000)
 
   return (
    
-    <aside className="w-[459px]  bg-[#1E213A] text-white font-raleway flex flex-col justify-between">
+    <aside className="w-[459px] h-screen bg-[#1E213A] text-white font-raleway flex flex-col justify-between">
       
       <header className="flex justify-between h-[100px]">
 
@@ -47,7 +47,7 @@ const fecha = new Date(data.dt * 1000)
 
       <footer className="w-full flex flex-col gap-1 justify-center items-center text-[#88869D] pt-6 mb-6">
       <span className="flex gap-3"> Today <span>*</span>{fecha.toLocaleDateString('en-GB', todayDate )}</span>
-      <span className="flex gap-2">
+      <span className="flex gap-2 pt-5">
         <img src={location} alt="icono location"className="w-[14px]"/>
        {data.name}
       </span>

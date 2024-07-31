@@ -25,7 +25,7 @@ export const useData = () => {
       console.log(rsJson)
     }
 
-    // latitud 44.34 longitud 10.99  https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${lat}&longitude=${lon}&localityLanguage=en
+
     const GPS = () => {
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((position) => {
