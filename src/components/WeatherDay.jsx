@@ -9,17 +9,8 @@ export const WeatherDay = ({ forecast }) => {
 
   const week = new Date(forecast[0] && forecast[0].dt * 1000);
   console.log(week.toLocaleDateString("en-GB", weekData));
-  console.log((forecast[0] && forecast[0].dt_txt).slice(0, 10))
-  console.log(forecast[1] && forecast[1].dt_txt)
-  console.log(forecast[2] && forecast[2].dt_txt)
-  console.log(forecast[3] && forecast[3].dt_txt)
-  console.log(forecast[4] && forecast[4].dt_txt)
-  console.log(forecast[5] && forecast[5].dt_txt)
-  console.log(forecast[6] && forecast[6].dt_txt)
-  console.log(forecast[7] && forecast[7].dt_txt)
-  console.log(forecast[8] && forecast[8].dt_txt)
-  console.log(forecast[9] && forecast[9].dt_txt)
-  console.log(forecast[10] && forecast[10].dt_txt)
+  // console.log((forecast[0] && forecast[0].dt_txt).slice(0, 10))
+
 
   return (
     <ul className="grid grid-cols-2 md:flex md:flex-wrap justify-center items-center gap-4 text-center pt-10 md:pt-0 font-raleway">
