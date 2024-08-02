@@ -1,7 +1,6 @@
 export const WeatherInfo = ({data}) => {
 
-    // const deg = {data?.wind && data?.wind?.deg}
-    // console.log(deg)
+  
 
   const windDirection = (deg) => {
     if (deg === 0 || deg === 360) {
@@ -53,7 +52,7 @@ export const WeatherInfo = ({data}) => {
         <p className="text-3xl p-3 flex gap-4"><span className='text-6xl font-bold'><h5>{data?.wind && data?.wind?.speed}</h5> </span> ms</p>
         <div className='flex pt-3 text-sm'>
           <img src='/direction.svg' alt="Locate" className="w-5 h-5 relative top-[0px] right-1" style={{ rotate: `${ data?.wind && data?.wind?.deg }deg`}} />
-          <p>NNE</p>
+          <p>{windDirection(data?.wind && data?.wind.deg)}</p>
         </div>
         </div>
 

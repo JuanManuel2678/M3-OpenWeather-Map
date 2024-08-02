@@ -1,6 +1,6 @@
 import lupa from "/lupa.svg"
 
-export const Modal = ({setShowModal, setSearch, searchPressed}) => {
+export const Modal = ({setShowModal, searchOptions, setSearch, searchPressed}) => {
 
   const city = [
     'London',
@@ -43,7 +43,7 @@ export const Modal = ({setShowModal, setSearch, searchPressed}) => {
             city.map(city => (
              <li 
               className="group text-white border border-transparent my-2 cursor-pointer p-2 hover:border-[1px] hover:border-white flex justify-between transition-all duration-300"
-              onClick={() => searchPressed('London')} >
+              onClick={() => searchOptions(city)} >
               <p>{city}</p>
               <img src="/vector.svg" alt="vector" className="w-5 h-5 relative bg-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </li>

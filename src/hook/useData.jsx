@@ -4,7 +4,6 @@ export const useData = () => {
     const [showModal, setShowModal ] = useState(false)
     const [data, setData] = useState({})
     const [search, setSearch] = useState("")
-    const [city, setCity] = useState('')
 
     const BASE_Link = 'https://api.openweathermap.org/data/2.5/weather?'
     const API_KEY = 'ae7f99ab707258411fafd5ac03530e3b'
@@ -23,8 +22,15 @@ export const useData = () => {
 
       setData(rsJson)
       setShowModal(false)
-      console.log(rsJson)
     }
+
+    async function  searchOptions (search) {
+      const rs = await fetch(`${BASE_Link}q=${search}&appid=${API_KEY}&units=metric`)
+      const rsJson = await rs.json()
+
+    setData(rsJson)
+    setShowModal(false)
+  }
 
 
     const GPS = () => {
@@ -47,12 +53,11 @@ export const useData = () => {
 
    return { 
     data,
-    setData,
     showModal,
     setShowModal,
-    search,
     setSearch,
     searchPressed,
+    searchOptions,
     GPS,
   }
 }
