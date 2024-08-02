@@ -12,7 +12,7 @@ export const useForescast = () => {
             const rs = await fetch(`${BASE_Link}lat=44.34&lon=10.99&appid=${API_KEY}&units=metric`)
             const rsJson = await rs.json()
 
-            console.log(rsJson.list)
+            console.log(rsJson.list.dt)
             setForecast(rsJson.list)
         }
 

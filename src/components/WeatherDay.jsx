@@ -14,7 +14,7 @@ export const WeatherDay = ({ forecast }) => {
 
       <ul className="grid grid-cols-2 md:flex md:flex-wrap justify-center items-center gap-4 text-center pt-10 md:pt-0 font-raleway" >
 
-      {forecast && forecast.slice(0, 12).map(item => (
+      {forecast && forecast.slice(0, 5).map(item => (
         <li key={item.index} className="flex flex-col gap-2 justify-between border-2 border-black bg-[#1E213A] p-4 w-[120px] h-[177px]">
         <h3 className="text-[16px] font-medium text-[#E7E7EB]">{ new Date(item.dt * 1000).toLocaleDateString('en-GB', weekData)}</h3>
         <figure className="h-[62px] w-full ">
