@@ -2,7 +2,7 @@ import { Footer } from "./Footer";
 import { WeatherDay } from "./WeatherDay";
 import { WeatherInfo } from "./WeatherInfo";
 
-export const Main = ({ data }) => {
+export const Main = ({ data, forecast }) => {
 
   return (
    
@@ -20,9 +20,9 @@ export const Main = ({ data }) => {
 
       </div>
 
-      <WeatherDay />
+      <WeatherDay forecast={forecast} />
 
-      <h4 className="text-left w-full font-bold text-[24px] pl-10 md:pl-20  pt-10 ">
+      <h4 className="text-left w-full font-bold text-[24px] pl-4 md:pl-20  pt-10 ">
         Today's Hightlights
       </h4>
 

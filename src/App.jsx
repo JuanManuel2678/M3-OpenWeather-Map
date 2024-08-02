@@ -19,7 +19,7 @@ function App() {
 
      <LeftSide data={data} setShowModal={setShowModal} GPS={GPS} />
 
-     <Main data={data}/>
+     <Main data={data} forecast={forecast}/>
 
     </div>
   );

@@ -2,6 +2,11 @@ import lupa from "/lupa.svg"
 
 export const Modal = ({setShowModal, setSearch, searchPressed}) => {
 
+  const city = [
+    'London',
+    'Barcelona',
+    'Long Beach',
+  ]
   
   return (
 
@@ -30,32 +35,20 @@ export const Modal = ({setShowModal, setSearch, searchPressed}) => {
         <button 
         onClick={searchPressed} 
         className=" w-[86px] h-[48px] bg-[#3C47E9] font-semibold text-base hover:bg-[#E7E7EB] hover:text-[#555555] active:bg-[#B5B5BB] transition duration-300-">Search</button>
+
       </header>
 
-      <div className="flex flex-col gap-4 mt-6">
-
-        <div 
-        className="group text-white border border-transparent my-2 cursor-pointer p-2 hover:border-[1px] hover:border-white flex justify-between transition-all duration-300"
-        onClick={() => searchPressed('London')} >
-          <p>London</p>
-          <img src="/vector.svg" alt="vector" className="w-5 h-5 relative bg-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        </div>
-
-        <div 
-        className="group text-white border border-transparent my-2 cursor-pointer p-2 hover:border-[1px] hover:border-white flex justify-between transition-all duration-300" 
-        onClick={() => searchPressed('barcelona')}>
-          <p>Barcelona</p>
-          <img src="/vector.svg" alt="vector" className="w-5 h-5 relative bg-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        </div>
-
-        <div 
-        className="group text-white border border-transparent my-2 cursor-pointer p-2 hover:border-[1px] hover:border-white flex justify-between transition-all duration-300"  
-        onClick={() => searchPressed('long beach')}>
-          <p>Long Beach</p>
-          <img src="/vector.svg" alt="vector" className="w-5 h-5 relative bg-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-        </div>
-
-      </div>
+      <ul className="flex flex-col gap-4 mt-6">
+        {city && 
+            city.map(city => (
+             <li 
+              className="group text-white border border-transparent my-2 cursor-pointer p-2 hover:border-[1px] hover:border-white flex justify-between transition-all duration-300"
+              onClick={() => searchPressed('London')} >
+              <p>{city}</p>
+              <img src="/vector.svg" alt="vector" className="w-5 h-5 relative bg-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+            </li>
+        ))}
+      </ul>
 
     </div>
   )
@@ -64,6 +57,3 @@ export const Modal = ({setShowModal, setSearch, searchPressed}) => {
 export default Modal
 
 
-// onClick={() => handleSearch('London')}
-// onClick={() => handleSearch('Barcelona')}
-// onClick={() => handleSearch('Long Beach')}

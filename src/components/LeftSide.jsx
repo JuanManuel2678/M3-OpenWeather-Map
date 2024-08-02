@@ -45,7 +45,7 @@ const fecha = new Date(data.dt * 1000)
         <h4 className="text-base font-semibold text-[#88869D]">{data?.weather && data?.weather[0]?.description}</h4>
       </div>
 
-      <footer className="w-full flex flex-col gap-1 justify-center items-center text-[#88869D] pt-6 mb-6">
+      <footer className="w-full flex flex-col gap-1 justify-center items-center text-[#afadc2] pt-6 mb-6">
       <span className="flex gap-3"> Today <span>*</span>{fecha.toLocaleDateString('en-GB', todayDate )}</span>
       <span className="flex gap-2 pt-5">
         <img src={location} alt="icono location"className="w-[14px]"/>

@@ -4,6 +4,7 @@ export const useData = () => {
     const [showModal, setShowModal ] = useState(false)
     const [data, setData] = useState({})
     const [search, setSearch] = useState("")
+    const [city, setCity] = useState('')
 
     const BASE_Link = 'https://api.openweathermap.org/data/2.5/weather?'
     const API_KEY = 'ae7f99ab707258411fafd5ac03530e3b'
@@ -27,10 +28,12 @@ export const useData = () => {
 
 
     const GPS = () => {
+
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((position) => {
           const { latitude, longitude } = position.coords;
           console.log(latitude, longitude)
+          
           fetch(`${BASE_Link}lat=${(latitude).toFixed(2)}&lon=${(longitude).toFixed(2)}&appid=${API_KEY}&units=metric`)
             .then(response => response.json())
             .then(data => setData(data));
